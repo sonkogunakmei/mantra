@@ -34,13 +34,15 @@ echo "export MANTRA_PORT="22"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-# download binary
+**download binary**
+```
 cd $HOME
 rm -rf mantra
 git clone https://github.com/MANTRA-Chain/mantrachain/ mantra
 cd mantra
 git checkout v3.0.0
 make install
+```
 
 # config and init app
 mantrachaind init $MONIKER --chain-id $MANTRA_CHAIN_ID
