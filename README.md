@@ -44,12 +44,14 @@ git checkout v3.0.0
 make install
 ```
 
-# config and init app
+**config and init app**
+```
 mantrachaind init $MONIKER --chain-id $MANTRA_CHAIN_ID
 sed -i \
 -e "s/chain-id = .*/chain-id = \"mantra-1\"/" \
 -e "s/keyring-backend = .*/keyring-backend = \"os\"/" \
 -e "s/node = .*/node = \"tcp:\/\/localhost:${MANTRA_PORT}657\"/" $HOME/.mantrachain/config/client.toml
+```
 
 # download genesis and addrbook
 wget -O $HOME/.mantrachain/config/genesis.json https://server-1.itrocket.net/mainnet/mantra/genesis.json
