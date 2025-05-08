@@ -53,9 +53,11 @@ sed -i \
 -e "s/node = .*/node = \"tcp:\/\/localhost:${MANTRA_PORT}657\"/" $HOME/.mantrachain/config/client.toml
 ```
 
-# download genesis and addrbook
+**download genesis and addrbook**
+```
 wget -O $HOME/.mantrachain/config/genesis.json https://server-1.itrocket.net/mainnet/mantra/genesis.json
 wget -O $HOME/.mantrachain/config/addrbook.json  https://server-1.itrocket.net/mainnet/mantra/addrbook.json
+```
 
 # set seeds and peers
 SEEDS="16ab08754dd0dc8b4d9202db16cb354ff618e3d9@mantra-mainnet-seed.itrocket.net:22656"
