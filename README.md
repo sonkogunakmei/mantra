@@ -88,10 +88,12 @@ s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${MANTRA_PO
 s%:26660%:${MANTRA_PORT}660%g" $HOME/.mantrachain/config/config.toml
 ```
 
-# config pruning
+**config pruning**
+```
 sed -i -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.mantrachain/config/app.toml 
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.mantrachain/config/app.toml
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"19\"/" $HOME/.mantrachain/config/app.toml
+```
 
 # set minimum gas price, enable prometheus and disable indexing
 sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "0.01uom"|g' $HOME/.mantrachain/config/app.toml
