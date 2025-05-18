@@ -102,7 +102,8 @@ sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.mantrachain/config/co
 sed -i -e "s/^indexer *=.*/indexer = \"null\"/" $HOME/.mantrachain/config/config.toml
 ```
 
-# create service file
+**create service file**
+```
 sudo tee /etc/systemd/system/mantrachaind.service > /dev/null <<EOF
 [Unit]
 Description=Mantra node
@@ -117,6 +118,8 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
+```
+
 
 # reset and download snapshot
 mantrachaind tendermint unsafe-reset-all --home $HOME/.mantrachain
