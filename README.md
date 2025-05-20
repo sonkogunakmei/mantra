@@ -121,13 +121,15 @@ EOF
 ```
 
 
-# reset and download snapshot
+**reset and download snapshot**
+```
 mantrachaind tendermint unsafe-reset-all --home $HOME/.mantrachain
 if curl -s --head curl https://server-1.itrocket.net/mainnet/mantra/mantra_2025-04-28_4945708_snap.tar.lz4 | head -n 1 | grep "200" > /dev/null; then
   curl https://server-1.itrocket.net/mainnet/mantra/mantra_2025-04-28_4945708_snap.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.mantrachain
     else
   echo "no snapshot found"
 fi
+```
 
 # enable and start service
 sudo systemctl daemon-reload
