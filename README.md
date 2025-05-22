@@ -131,7 +131,8 @@ if curl -s --head curl https://server-1.itrocket.net/mainnet/mantra/mantra_2025-
 fi
 ```
 
-# enable and start service
+**enable and start service**
+```
 sudo systemctl daemon-reload
 sudo systemctl enable mantrachaind
 sudo systemctl restart mantrachaind && sudo journalctl -u mantrachaind -fo cat
@@ -139,6 +140,8 @@ Automatic Installation
 pruning: custom: 100/0/19 | indexer: null
 
 source <(curl -s https://itrocket.net/api/mainnet/mantra/autoinstall/)
+```
+
 Create wallet
 # to create a new wallet, use the following command. don’t forget to save the mnemonic
 mantrachaind keys add $WALLET
