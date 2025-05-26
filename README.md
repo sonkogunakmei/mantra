@@ -147,8 +147,10 @@ source <(curl -s https://itrocket.net/api/mainnet/mantra/autoinstall/)
 mantrachaind keys add $WALLET
 ```
 
-# to restore exexuting wallet, use the following command
+**to restore exexuting wallet, use the following command**
+```
 mantrachaind keys add $WALLET --recover
+```
 
 # save wallet and validator address
 WALLET_ADDRESS=$(mantrachaind keys show $WALLET -a)
