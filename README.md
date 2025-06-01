@@ -166,8 +166,11 @@ source $HOME/.bash_profile
 mantrachaind status 2>&1 | jq 
 ```
 
-# before creating a validator, you need to fund your wallet and check balance
-mantrachaind query bank balances $WALLET_ADDRESS 
+**before creating a validator, you need to fund your wallet and check balance**
+```
+mantrachaind query bank balances $WALLET_ADDRESS
+```
+
 Node Sync Status Checker
 #!/bin/bash
 rpc_port=$(grep -m 1 -oP '^laddr = "\K[^"]+' "$HOME/.mantrachain/config/config.toml" | cut -d ':' -f 3)
